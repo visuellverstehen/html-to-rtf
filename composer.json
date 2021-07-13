@@ -1,0 +1,26 @@
+{
+    "name": "hermanouchoa/php-html-to-rtf-converter",
+    "description": "A HTML to RTF converter",
+    "type":"library",
+    "license": "MIT",
+    "keywords": [
+      "html",
+      "rtf",
+      "converter"
+    ],
+    "authors": [
+      {
+        "name": "Hermano Uchôa",
+        "email": "hermanouchoa@gmail.com",
+        "homepage": "http://hermanouchoa.com.br"
+      }
+    ],
+    "require": {
+      "php": "^5.6 || ^7.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "HtmlToRtf\\": "src"
+      }
+    }
+  }
