@@ -1,5 +1,5 @@
 {
-    "name": "hermanouchoa/php-html-to-rtf-converter",
+    "name": "visuellverstehen/php-html-to-rtf-converter",
     "description": "A HTML to RTF converter",
     "type":"library",
     "license": "MIT",
@@ -10,9 +10,9 @@
     ],
     "authors": [
       {
-        "name": "Hermano Uchôa",
-        "email": "hermanouchoa@gmail.com",
-        "homepage": "http://hermanouchoa.com.br"
+        "name": "Juri Petersen",
+        "email": "juri.petersen@visuellverstehen.de",
+        "homepage": "https://www.visuellverstehen.de"
       }
     ],
     "require": {

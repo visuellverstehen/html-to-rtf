@@ -2,7 +2,10 @@
 if(isset($_POST['html']))
 {
     require_once('../src/HtmlToRtf.php');
-    $htmlToRtfConverter = new HtmlToRtf\HtmlToRtf($_POST['html']);
+    require_once('../src/Config.php');
+
+    $config = new HtmlToRtf\Config('Arial', 8);
+    $htmlToRtfConverter = new HtmlToRtf\HtmlToRtf($_POST['html'], $config);
     $htmlToRtfConverter->getRTFFile();
 }
 ?>

@@ -22,19 +22,23 @@ class Node
 
     private $_domNode;
 
+    private $config;
+
     /**
      * @param DOMNode $aDomNode
      */
-    public function __construct(DOMNode $aDomNode)
+    public function __construct(DOMNode $aDomNode, Config $config = new Config())
     {
+        $this->config = $config;
         $this->_domNode = $aDomNode;
     }
 
     /**
      * @param DOMNode $node
+     * @param Config $config
      * @return Node
      */
-    public static function getInstance($node)
+    public static function getInstance($node, Config $config = new Config())
     {
         if(!isset($node)){
             return null;
@@ -50,10 +54,10 @@ class Node
                      */
                     switch($node->tagName){
                         case 'html':
-                            $nodeSpecific = new HTMLElementNode($node);
+                            $nodeSpecific = new HTMLElementNode($node, $config);
                             break;
                         case 'body':
-                            $nodeSpecific = new Node($node);
+                            $nodeSpecific = new Node($node, $config);
                             break;
                         case 'b':
                         case 'strong':
@@ -103,7 +107,7 @@ class Node
                 //start document type nodes
                 case XML_HTML_DOCUMENT_NODE:
                 case XML_DOCUMENT_TYPE_NODE:
-                    $nodeSpecific = new Node($node);
+                    $nodeSpecific = new Node($node, $config);
                     break;
 
                 //remove non supported nodes
@@ -123,7 +127,7 @@ class Node
     {
         $rtf = '';
         foreach($this->getDomNode()->childNodes ?: [] as $childNode){
-            $node = self::getInstance($childNode);
+            $node = self::getInstance($childNode, $this->config);
             $rtf .= $node->parse();
         }
         return $rtf;
