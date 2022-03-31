@@ -22,15 +22,21 @@ class HtmlToRtf
      */
     private $_doc;
 
-    public function __construct($html)
+    /**
+     * @var Config
+     */
+    private $config;
+
+    public function __construct($html, Config $config = new Config())
     {
+        $this->config = $config;
         $this->_doc = new DOMDocument();
         $this->setHtml($html);
     }
 
     public function getRTF()
     {
-        $node = Node::getInstance($this->getDoc());
+        $node = Node::getInstance($this->getDoc(), $this->config);
         return $node->parse();
     }
 
