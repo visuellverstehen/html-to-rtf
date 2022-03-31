@@ -1,4 +1,4 @@
-# A PHP HTML-to-RTF-converter
+# HTML-to-RTF-converter for PHP
 _Convert basic HTML output of TinyMCE to RTF with PHP_
 
 Supported HTML:
@@ -17,7 +17,13 @@ Supported HTML:
   - Unordered
 - Unicode characters
 
-This is a fork from https://github.com/hermanouchoa/php-html-to-rtf-converter.
-This fork provides a ```Config``` class that provides a way to override the default font and font-size of RTF.
+This is a fork from [hermanouchoa/php-html-to-rtf-converter](https://github.com/hermanouchoa/php-html-to-rtf-converter).
+This fork provides a ```Config``` class that introduces a way to override the default font and font-size of RTF.
 
+# Installation
+``` bash
+composer require visuellverstehen/php-html-to-rtf-converter
+```
+
+# Examples
 Example can be found in examples/index.php

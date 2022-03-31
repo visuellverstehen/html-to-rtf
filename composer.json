@@ -1,5 +1,5 @@
 {
-    "name": "visuellverstehen/php-html-to-rtf-converter",
+    "name": "visuellverstehen/html-to-rtf",
     "description": "A HTML to RTF converter",
     "type":"library",
     "license": "MIT",
