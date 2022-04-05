@@ -22,7 +22,7 @@ This fork provides a ```Config``` class that introduces a way to override the de
 
 # Installation
 ``` bash
-composer require visuellverstehen/php-html-to-rtf-converter
+composer require visuellverstehen/html-to-rtf:dev-master
 ```
 
 # Examples
