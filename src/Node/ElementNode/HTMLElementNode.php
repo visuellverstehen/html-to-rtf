@@ -11,10 +11,10 @@ class HTMLElementNode extends ElementNode
      */
     private $config;
 
-    public function __construct($node, Config $config = new Config(), $rtfPrepend = '', $rtfAppend = '')
+    public function __construct($node, Config $config = null, $rtfPrepend = '', $rtfAppend = '')
     {
         parent::__construct($node, $rtfPrepend, $rtfAppend);
-        $this->config = $config;
+        $this->config = $config ?? new Config();
     }
 
     public function parse()
