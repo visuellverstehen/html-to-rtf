@@ -3,6 +3,7 @@ namespace HtmlToRtf;
 
 use DOMDocument;
 use HtmlToRtf\Node;
+use HtmlToRtf\Config;
 
 // References:
 //  - https://www.safaribooksonline.com/library/view/RTF+Pocket+Guide/9781449302047/ch01.html
@@ -27,9 +28,9 @@ class HtmlToRtf
      */
     private $config;
 
-    public function __construct($html, Config $config = new Config())
+    public function __construct($html, ?Config $config)
     {
-        $this->config = $config;
+        $this->config = $config ?? new Config();
         $this->_doc = new DOMDocument();
         $this->setHtml($html);
     }

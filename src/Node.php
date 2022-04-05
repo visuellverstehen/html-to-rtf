@@ -27,9 +27,9 @@ class Node
     /**
      * @param DOMNode $aDomNode
      */
-    public function __construct(DOMNode $aDomNode, Config $config = new Config())
+    public function __construct(DOMNode $aDomNode, ?Config $config)
     {
-        $this->config = $config;
+        $this->config = $config ?? new Config();
         $this->_domNode = $aDomNode;
     }
 
@@ -38,11 +38,14 @@ class Node
      * @param Config $config
      * @return Node
      */
-    public static function getInstance($node, Config $config = new Config())
+    public static function getInstance($node, ?Config $config)
     {
         if(!isset($node)){
             return null;
         }
+
+        $config = $config ?? new Config();
+
         $instanceId = spl_object_hash($node);
         if(!isset(self::$_nodeStore[$instanceId])){
             $nodeSpecific = null;
