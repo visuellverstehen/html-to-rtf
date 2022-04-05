@@ -28,7 +28,7 @@ class HtmlToRtf
      */
     private $config;
 
-    public function __construct($html, Config $config = null)
+    public function __construct($html, ?Config $config = null)
     {
         $this->config = $config ?? new Config();
         $this->_doc = new DOMDocument();

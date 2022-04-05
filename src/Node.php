@@ -27,7 +27,7 @@ class Node
     /**
      * @param DOMNode $aDomNode
      */
-    public function __construct(DOMNode $aDomNode, Config $config = null)
+    public function __construct(DOMNode $aDomNode, ?Config $config = null)
     {
         $this->config = $config ?? new Config();
         $this->_domNode = $aDomNode;
@@ -38,7 +38,7 @@ class Node
      * @param Config $config
      * @return Node
      */
-    public static function getInstance($node, Config $config = null)
+    public static function getInstance($node, ?Config $config = null)
     {
         if(!isset($node)){
             return null;

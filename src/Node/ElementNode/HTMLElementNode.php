@@ -11,7 +11,7 @@ class HTMLElementNode extends ElementNode
      */
     private $config;
 
-    public function __construct($node, Config $config = null, $rtfPrepend = '', $rtfAppend = '')
+    public function __construct($node, ?Config $config = null, $rtfPrepend = '', $rtfAppend = '')
     {
         parent::__construct($node, $rtfPrepend, $rtfAppend);
         $this->config = $config ?? new Config();
