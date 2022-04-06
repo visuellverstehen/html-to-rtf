@@ -5,8 +5,8 @@ use HtmlToRtf\Node;
 
 class NotSupportedNode extends Node
 {
-    //do nothing
+    //ignore the current node and parse all children
     public function parse() {
-        return '';
+        return $this->parseNodeChildren();
     }
 }
